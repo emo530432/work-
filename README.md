@@ -5,4 +5,4 @@
 
 //快捷键、统计字数、报错指示、标签检查、悬浮窗教程
 
-// I don't want work
+// I don't want to work
