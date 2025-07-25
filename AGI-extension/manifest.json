@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AGI标注平台增强工具",
+  "version": "3.3",
+  "description": "Delete二次确认删除；大键盘1/2/3/4分别触发操作；文字统计功能；标签校验",
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://agi-eval.cn/agiData/annotation/detail*"],
+      "js": [
+        "floating-window.js",
+        "shortcuts.js",
+        "tagValidator.js",
+        "content.js"
+      ],
+      "run_at": "document_end"  // 修改为 document_end 确保DOM加载完成
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["textCounter.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": ["storage"]
+}
